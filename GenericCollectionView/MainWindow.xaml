@@ -17,9 +17,11 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Button Click="AddClick" Content="Add" />
-        <!--<GroupBox Grid.Row="1" Header="IEnumerable">
+        <!--
+            <GroupBox Grid.Row="1" Header="IEnumerable">
             <DataGrid ItemsSource="{Binding Persons}" />
-        </GroupBox>-->
+            </GroupBox>
+        -->
 
         <GroupBox Grid.Row="2" Header="GenericView">
             <DataGrid ItemsSource="{Binding PersonsGenericView}">

@@ -22,6 +22,18 @@
             PropertyChangedEventManager.AddListener(source, this, ((MemberExpression)prop.Body).Member.Name);
         }
 
+        public new Predicate<T> Filter
+        {
+            get
+            {
+                return o => base.Filter(o);
+            }
+            set
+            {
+                base.Filter = o => value((T)o);
+            }
+        }
+
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
             return this.Cast<T>().GetEnumerator();
@@ -32,5 +44,7 @@
             Refresh();
             return true;
         }
+
+
     }
 }
